@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeterClient";
+
+package metanit;
+
+message ServerStreamRequest{ }
+
+message ServerStreamResponse{
+  string content = 1;
+}
+
+service ServerStreamMessenger{
+  // серверная потоковая передача
+  rpc ServerDataStream (ServerStreamRequest) returns (stream ServerStreamResponse);
+}

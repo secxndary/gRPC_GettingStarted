@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeter";
+
+package metanit;
+
+message Request{
+  string word = 1;
+}
+
+message Response{
+  string word = 1;
+  string translation = 2;
+}
+
+service Translator {
+  // определение метода Translate, 
+  // который получает сообщение Request
+  // и отправляет сообщение Response
+  rpc Translate (Request) returns (Response);
+}

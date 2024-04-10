@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeterClient";
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+
+package metanit;
+
+message InviteRequest {
+  string name = 1;
+}
+
+message InviteResponse {
+  string invitation = 1;
+  google.protobuf.Timestamp start = 2;
+  google.protobuf.Duration duration = 3;
+}
+
+service Inviter{
+  rpc Invite (InviteRequest) returns (InviteResponse);
+}

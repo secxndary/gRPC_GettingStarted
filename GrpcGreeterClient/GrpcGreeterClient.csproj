@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.26.1" />
+      <PackageReference Include="Grpc.Net.Client" Version="2.62.0" />
+      <PackageReference Include="Grpc.Tools" Version="2.62.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+        <Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
+        <Protobuf Include="Protos\translator.proto" GrpcServices="Client" />
+        <Protobuf Include="Protos\inviter.proto" GrpcServices="Client" />
+        <Protobuf Include="Protos\messenger_server_stream.proto" />
+        <Protobuf Include="Protos\messenger_client_stream.proto" />
+        <Protobuf Include="Protos\user.proto" />
+    </ItemGroup>
+
+</Project>

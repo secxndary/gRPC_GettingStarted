@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "GrpcGreeter";
+
+message Person {
+  google.protobuf.StringValue name = 1;
+  google.protobuf.Int32Value age = 2;
+}
